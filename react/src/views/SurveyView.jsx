@@ -2,9 +2,9 @@ import { LinkIcon, PhotoIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import TButton from "../components/core/TButton";
 import PageComponent from "../components/PageComponent";
-// import axiosClient from "../axios.js";
+import axiosClient from "../axios.js";
 import { useNavigate, useParams } from "react-router-dom";
-// import SurveyQuestions from "../components/SurveyQuestions";
+import SurveyQuestions from "../components/SurveyQuestions";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
@@ -43,39 +43,38 @@ export default function SurveyView() {
     reader.readAsDataURL(file);
   };
 
+  const onSubmit = (ev) => {
+    ev.preventDefault();
 
-//   const onSubmit = (ev) => {
-//     ev.preventDefault();
+    const payload = { ...survey };
+    if (payload.image) {
+      payload.image = payload.image_url;
+    }
+    delete payload.image_url;
+    let res = null;
+    if (id) {
+      res = axiosClient.put(`/survey/${id}`, payload);
+    } else {
+      res = axiosClient.post("/survey", payload);
+    }
 
-//     const payload = { ...survey };
-//     if (payload.image) {
-//       payload.image = payload.image_url;
-//     }
-//     delete payload.image_url;
-//     let res = null;
-//     if (id) {
-//       res = axiosClient.put(`/survey/${id}`, payload);
-//     } else {
-//       res = axiosClient.post("/survey", payload);
-//     }
-
-//     res
-//       .then((res) => {
-//         console.log(res);
-//         navigate("/surveys");
-//         if (id) {
-//           showToast("The survey was updated");
-//         } else {
-//           showToast("The survey was created");
-//         }
-//       })
-//       .catch((err) => {
-//         if (err && err.response) {
-//           setError(err.response.data.message);
-//         }
-//         console.log(err, err.response);
-//       });
-//   };
+    res
+      .then((res) => {
+        console.log(res);
+        navigate("/surveys");
+        if (id) {
+          showToast("The survey was updated");
+        } else {
+          showToast("The survey was created");
+        }
+      })
+      .catch((err) => {
+        if (err && err.response) {
+          setError(err.response.data.message);
+        }
+        console.log(err, err.response);
+      });
+  };
 
   function onQuestionsUpdate(questions) {
     setSurvey({
@@ -99,15 +98,15 @@ export default function SurveyView() {
 
   }
 
-//   useEffect(() => {
-//     if (id) {
-//       setLoading(true);
-//       axiosClient.get(`/survey/${id}`).then(({ data }) => {
-//         setSurvey(data.data);
-//         setLoading(false);
-//       });
-//     }
-//   }, []);
+  useEffect(() => {
+    if (id) {
+      setLoading(true);
+      axiosClient.get(`/survey/${id}`).then(({ data }) => {
+        setSurvey(data.data);
+        setLoading(false);
+      });
+    }
+  }, []);
 
 
   return (
@@ -128,7 +127,7 @@ export default function SurveyView() {
     >
       {loading && <div className="text-center text-lg">Loading...</div>}
       {!loading && (
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={onSubmit}>
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               {error && (
@@ -264,10 +263,10 @@ export default function SurveyView() {
               <button type="button" onClick={addQuestion}>
                 Add question
               </button>
-              {/* <SurveyQuestions
+              <SurveyQuestions
                 questions={survey.questions}
                 onQuestionsUpdate={onQuestionsUpdate}
-              /> */}
+              />
             </div>
             <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
               <TButton>Save</TButton>
