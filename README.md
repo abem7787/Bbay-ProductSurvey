@@ -95,5 +95,5 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 7. php artisan serve on one terminal 
 8. php artisan migrate to update tables on mysql
 9. check the tables wheater they had arrive on your mysql
-10. npm run dev   
+10. npm run dev to activate url on browser.   
 
