@@ -13,7 +13,7 @@ By default, you can use this for several occasions.
 Perhaps you are looking for a method to gather information by using relevant questions from a sample of people, and you want to understand a population or a demographic as a whole. At a least, perhaps your role as a recruiter puts you in charge of recruitment, screening, and training job applicants. For all as it may, the Testing survey has you covered with easy-to-use ui functionalities. 
 
 
-The prerequisite:
+Prerequisite:
 
 1: Git clone folder
 
