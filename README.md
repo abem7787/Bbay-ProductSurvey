@@ -15,15 +15,21 @@ Perhaps you are looking for a method to gather information by using relevant que
 
 Prerequisite:
 
-1: Git clone folder
+1. Git clone folder
 
-2: npm i for node mode dependencies
+2. npm i for node mode dependencies
 
-3: In baseUrl add http://localhost:8000/api to axiosClient function.
+
+
+
+3. In baseUrl add http://localhost:8000/api to axiosClient function.
 
 const axiosClient = axios.create({
   baseURL: 'http://localhost:8000/api'
 });
+
+
+
 
 
 4:  Make a new .env, 
@@ -89,13 +95,18 @@ VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 
-5. Laravel + Vite is install, but in case the installation falls short, tap on your termial: "Laravel new" and then tag the main directory to complete installation.
-6. Php artisan serve on terminal to begin the program. In case you come across this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues,
-7. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
-8. Write "php artisan serve" on one terminal.
-9. Then write "php artisan migrate" to update tables on mysql.
-10. Check the tables wheater they had arrive on your mysql databse.
-11. npm run dev to activate url on browser.
+5. Add to scripts in package.json "dev": "vite --port=3000",
+        "build": "vite build",
+        "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+6. Laravel + Vite is install, but in case the installation falls short, tap on your termial: "Laravel new" and then tag the main directory to complete installation.
+
+7. Php artisan serve on terminal to begin the program. In case you come across this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues,
+8. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
+9. Write "php artisan serve" on one terminal. And cd to directory to react folder run dev s
+10. Then write "php artisan migrate" to update tables on mysql.
+11. Check the tables wheater they had arrive on your mysql databse.
+12. npm run dev to activate url on browser.
 
 
 
