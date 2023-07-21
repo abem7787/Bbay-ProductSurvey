@@ -15,7 +15,7 @@ Perhaps you are looking for a method to gather information by using relevant que
 
 Prerequisite:
 
-1. Git clone folder
+1. Before you start the Git clone folder make sure that your run the app on chrome.
 
 2. npm i for node mode dependencies
 
@@ -103,9 +103,12 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 7. Write "php artisan serve" on the terminal to begin the program. If you encounter this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues.
 8. cd to react folder "npm run dev" on a separate terminal to activate the browser.
-9. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
-10. Then write "php artisan migrate" to update tables on MySQL.
-11. Check the tables wheater they had to arrive on your mysql database.
+9. Have ethier(xampp, mamp, wamp,) and create a database with mysql. If you encouter this bug:'vite' is not recognized as an internal or external command,
+operable program or batch file. Write the following the command on the working directory: "npm intall" then npm run dev. Click on the localhost link
+http://localhost:3000/ The broweer should display a login page. Nothing works at the momement because you need to migrate the tables to the database.
+11. I'm using xammp I add the entire project folder onto the htdoc to sync with mysql database,Then written "php artisan migrate" to update tables on MySQL.
+12. Check the tables wheater they had to arrive on your mysql database.
+
 
 
 
