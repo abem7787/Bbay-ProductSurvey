@@ -89,11 +89,13 @@ VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 
+5. Laravel + Vite is install, but in case the installation falls short, tap on your termial: "Laravel new" and then tag the main directory to complete installation.
+6. Php artisan serve on terminal to begin the program. In case you come across this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues,
+7. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
+8. Write "php artisan serve" on one terminal.
+9. Then write "php artisan migrate" to update tables on mysql.
+10. Check the tables wheater they had arrive on your mysql databse.
+11. npm run dev to activate url on browser.
 
-5. Laravel + Vite must be install
-6. have ethier(xampp, mamp, wamp,) and create a database with mysql
-7. php artisan serve on one terminal 
-8. php artisan migrate to update tables on mysql
-9. check the tables wheater they had arrive on your mysql
-10. npm run dev to activate url on browser.   
+
 
