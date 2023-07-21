@@ -99,14 +99,14 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
         "build": "vite build",
         "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
-6. Laravel + Vite is install, but in case the installation falls short, tap on your termial: "Laravel new" and then tag the main directory to complete installation.
+6. Laravel + Vite is installed, but in case the installation falls short, tap on your terminal: "Laravel new" and then tag the main directory to complete the installation.
 
-7. Php artisan serve on terminal to begin the program. In case you come across this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues,
-8. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
-9. Write "php artisan serve" on one terminal. And cd to directory to react folder run dev s
-10. Then write "php artisan migrate" to update tables on mysql.
-11. Check the tables wheater they had arrive on your mysql databse.
-12. npm run dev to activate url on browser.
+7. Write "php artisan serve" on the terminal to begin the program. If you encounter this bug: php artisan: "failed to open stream: No such file or directory". composer update instead of deleting the composer.lock file when facing issues.
+8. cd to react folder "npm run dev" on a separate terminal to activate the browser.
+9. Have ethier(xampp, mamp, wamp,) and create a database with mysql.
+10. Then write "php artisan migrate" to update tables on MySQL.
+11. Check the tables wheater they had to arrive on your mysql database.
+
 
 
 
