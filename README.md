@@ -17,12 +17,14 @@ Prerequisite:
 
 1. Before you start the Git clone folder make sure that your run the app on chrome.
 
-2. npm i for node mode dependencies
+2. npm i for node mode dependencies, and composer install on the main directory. 
 
 
 
 
-3. In baseUrl add http://localhost:8000/api to axiosClient function.
+3. In axios.js  add this to your baseUrl http://localhost:8000/api.
+
+   Example:
 
 const axiosClient = axios.create({
   baseURL: 'http://localhost:8000/api'
