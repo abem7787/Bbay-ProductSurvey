@@ -34,7 +34,7 @@ const axiosClient = axios.create({
 
 
 
-4:  Make a new .env, 
+4:  Inside your explorer make a new .env, 
 
 drag and drop to config:
 APP_NAME=Laravel
