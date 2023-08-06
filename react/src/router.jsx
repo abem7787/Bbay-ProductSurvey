@@ -53,6 +53,10 @@ const router = createBrowserRouter([
     path: "/view/survey/:slug",
     element: <SurveyPublicView />,
   },
+  {
+    path: "survey/public/:slug",
+    element: <SurveyPublicView />,
+  },
 ]);
 
 export default router;
